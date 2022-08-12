@@ -1,0 +1,52 @@
+/* The extension popup cannot be smaller than 25x25 and cannot be larger than 800x600. */
+#popup
+{
+    min-width: 150px;
+    width: 300px;
+    height: 230px;
+    font-size: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+}
+
+#area{
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 30px;
+    padding: 5px;
+    width: 30%;
+    text-align: center;
+}
+#refresh{
+    background-color: transparent;
+    border: 0px;
+    padding: 1px;
+    font-size: 17px;
+    margin-top: 10px;
+}
+#weather-info{
+    border: 1px solid white;
+    border-radius: 60px;
+    background-color: rgba(176, 211, 232, 0.4);
+    margin: 15px 10px 15px 10px;
+}
+#temperature-Head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#temperature-description
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;; 
+}
+#temperature{
+    font-size: 40px;
+}
+#hi-low{
+    font-size: 15px;
+}
+#date{
+    font-size: 15px;
+}

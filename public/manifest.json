@@ -1,14 +1,27 @@
 {
-  "name": "Weather Extension",
-  "description": "Daily weather",
+  "name": "Weather Teller",
+  "description": "Updates about current weather in your specified area",
   "version": "1.0",
   "manifest_version": 3,
   "author": "mahnoor",
   "action":{
-    "default_popup": "index.html"
+    "default_icon": {          
+      "16": "icon16.png",  
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+  },
+  "default_title": "Today's Weather",   
+  "default_popup": "index.html"
   } ,
   "permissions": [
     "geolocation",
     "notifications"
-  ]
+  ],
+  "icons": {
+    "16": "icon16.png",  
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }

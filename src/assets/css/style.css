@@ -1,10 +1,8 @@
-/* The extension popup cannot be smaller than 25x25 and cannot be larger than 800x600. */
-
 *{
     color: white;
     font-weight: 600;
 }
-
+/* The extension popup cannot be smaller than 25x25 and cannot be larger than 800x600. */
 #popup
 {
     min-width: 150px;
@@ -14,7 +12,6 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 15px;
 }
-
 #location{
     background-color: transparent;
     border: 1px solid whitesmoke;
@@ -66,4 +63,9 @@
     linear-gradient(white, white) center/1px 100% no-repeat;
     background-position:33% 0, 67% 0;
     font-weight: 700 !important;
+}
+
+#error div{
+    font-size: xx-large;
+    padding-top: 17px;
 }

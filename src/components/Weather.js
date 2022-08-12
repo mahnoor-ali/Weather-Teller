@@ -6,6 +6,8 @@ import cloudy from '../assets/images/cloudy.png';
 export default function Weather() {
   const [weather, setWeather] = useState({ cloudPct: '', Humidity: '', temperature: '', feelsLike: '', minTemp: '', maxTemp: '' });
   const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('Error');
+  const [errorCode, setErrorCode] = useState('Error');
   const [tempLocation, settempLocation] = useState('Lahore'); // this is the location that updates while user inputs
   const [location, setLocation] = useState('Lahore');
   const [date, setDate] = useState('Day');
@@ -14,17 +16,23 @@ export default function Weather() {
       url: `https://api.api-ninjas.com/v1/weather?city=${location}`,
       method: 'GET',
       headers: {
-        'X-Api-Key': 'fIPnPSMBFoybunPrZ6arNPOAWqvw0J1kqmZBDuPR',
+        // 'X-Api-Key': 'fIPnPSMBFoybunPrZ6arNPOAWqvw0J1kqmZBDuPR',
         'Content-Type': 'application/json'
       }
     })
       .then(response => {
         setWeather(prevWeather => ({ cloudPct: response.data.cloud_pct, Humidity: response.data.humidity, temperature: response.data.temp, feelsLike: response.data.feels_like, minTemp: response.data.min_temp, maxTemp: response.data.max_temp }));
-        console.log(response.data);
+        if(response.status === 200) { // status code 200 means success hence no error
         setError(false);
+        }
+        else{
+          setError(true);
+        }
       })
       .catch(error => {
         console.error(error);
+        setErrorMsg(error.message);
+        setErrorCode(error.code);
       })
 
     //set Day and Date
@@ -47,6 +55,9 @@ export default function Weather() {
 
   return (
     <div id="popup" style={{ backgroundImage: `url(${background})` }}>
+   {/* render this when response status code is 200 i.e no error */}
+  { error &&
+    <div>
       <div>
         <input id="location" type="text" value={tempLocation} onChange={modifyLocation} />
         <button id="refresh" onClick={changeLocation}><i className="bi bi-arrow-clockwise" ></i></button>
@@ -69,6 +80,18 @@ export default function Weather() {
         <div id="cloud-pct"> {weather.cloudPct}%</div>
         <div id="feels-like"> {weather.feelsLike}°</div>
       </div>
+      </div>
+    }
+
+    {/* render this when response status code is not 200 i.e error */}
+    { !error &&
+    <div id="error">
+       <div>{errorCode}</div>
+       <h3>{errorMsg}</h3>
+       <h4>Please try again later</h4>
+    </div>
+    }
+
     </div>
   )
 }

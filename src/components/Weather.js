@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import background from '../assets/images/background.png';
 import cloudy from '../assets/images/cloudy.png';
+import Error from './Error';
 
 export default function Weather() {
   const [weather, setWeather] = useState({ cloudPct: '', Humidity: '', temperature: '', feelsLike: '', minTemp: '', maxTemp: '' });
@@ -25,10 +26,10 @@ export default function Weather() {
         setError(false);
       })
       .catch(error => {
+        setError(true);
         console.error(error);
         setErrorMsg(error.message);
         setErrorCode(error.code);
-        setError(true);
       })
 
     //set Day and Date
@@ -61,7 +62,7 @@ export default function Weather() {
     <div>
       <div>
         <input id="location" type="text" value={tempLocation} onChange={modifyLocation} />
-        <button id="refresh" onClick={changeLocation}><i className="bi bi-arrow-clockwise" ></i></button>
+        <button className="refresh" onClick={changeLocation}><i className="bi bi-arrow-clockwise" ></i></button>
       </div>
 
       <div id="weather-info">
@@ -86,13 +87,7 @@ export default function Weather() {
 
     {/* render this when response status code is not 200 i.e error */}
     { error &&
-    <div id="error">
-       <div>{errorCode}</div>
-       <h3>{errorMsg}</h3>
-       <h4>Please try again later!  
-       <button id="refresh" onClick={resetPage}><i className="bi bi-arrow-clockwise" ></i></button>
-       </h4>
-    </div>
+      <Error code={errorCode} msg={errorMsg} handleRefresh={resetPage} />
     }
 
     </div>

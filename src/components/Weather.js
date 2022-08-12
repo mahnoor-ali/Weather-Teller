@@ -48,26 +48,27 @@ export default function Weather() {
   return (
     <div id="popup" style={{ backgroundImage: `url(${background})` }}>
       <div>
-        <input id="area" type="text" value={tempLocation} onChange={modifyLocation} />
+        <input id="location" type="text" value={tempLocation} onChange={modifyLocation} />
         <button id="refresh" onClick={changeLocation}><i className="bi bi-arrow-clockwise" ></i></button>
       </div>
 
       <div id="weather-info">
-        <div id="temperature-Head">
-          <img src={cloudy} alt="weather" />
-          <div id="temperature">{weather.temperature}°</div>
-          <div>{location}</div>
-          </div>
-        <div id="temperature-description">
-        <div id="hi-low" >Hi:{weather.maxTemp}  Low:{weather.minTemp}</div>
+        <img src={cloudy} alt="weather" />
+        <div id="temperature">{weather.temperature}°</div>
+        <div id="hi-low" >H:{weather.maxTemp} / L:{weather.minTemp}</div>
+        <div></div>
+        <div></div>
         <div id="date">{date}</div>
-        </div>
       </div>
 
-      {/* <div>cloud %: {weather.cloudPct}</div>
-      <div>Humidity: {weather.Humidity}</div>
-      <div>temperature: {weather.temperature}</div>
-      <div>feelsLike: {weather.feelsLike}</div> */}
+      <div id="details">
+        <div>Humidity</div>
+        <div id="cloud-pct">Cloud</div>
+        <div >Feels</div>
+        <div id="humidity">{weather.Humidity}%</div>
+        <div id="cloud-pct"> {weather.cloudPct}%</div>
+        <div id="feels-like"> {weather.feelsLike}°</div>
+      </div>
     </div>
   )
 }

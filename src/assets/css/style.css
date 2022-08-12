@@ -1,52 +1,69 @@
 /* The extension popup cannot be smaller than 25x25 and cannot be larger than 800x600. */
+
+*{
+    color: white;
+    font-weight: 600;
+}
+
 #popup
 {
     min-width: 150px;
-    width: 300px;
-    height: 230px;
+    width: 315px;
+    height: 235px;
     font-size: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 15px;
 }
 
-#area{
+#location{
     background-color: transparent;
-    border: 1px solid gray;
-    border-radius: 30px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
     padding: 5px;
-    width: 30%;
+    width: 35%;
     text-align: center;
+    font-size: medium;
 }
 #refresh{
     background-color: transparent;
     border: 0px;
-    padding: 1px;
-    font-size: 17px;
+    padding: 2px;
+    font-size: 20px;
     margin-top: 10px;
 }
 #weather-info{
+    position: relative;
     border: 1px solid white;
     border-radius: 60px;
     background-color: rgba(176, 211, 232, 0.4);
-    margin: 15px 10px 15px 10px;
-}
-#temperature-Head{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-#temperature-description
-{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;; 
+    margin: 20px 10px 20px 10px;
+    padding-left: 12px;
+    display: grid;
+    grid-template-columns: 0.8fr 0.8fr 1.2fr;
+    grid-template-rows: repeat(2, 0.2fr);
+    background-position:33% 0, 67% 0;
 }
 #temperature{
-    font-size: 40px;
+    font-size: 45px;
+    align-self: center;
 }
 #hi-low{
-    font-size: 15px;
+    align-self: center;
 }
 #date{
-    font-size: 15px;
+    font-size: 14px;
+    align-self: start;
+    position: absolute;
+    top: 44px;
+    right: 22px;
+}
+#details{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    background:
+    linear-gradient(white, white) center/1px 100% no-repeat,
+    linear-gradient(white, white) center/1px 100% no-repeat;
+    background-position:33% 0, 67% 0;
+    font-weight: 700 !important;
 }

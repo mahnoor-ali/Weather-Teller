@@ -28,6 +28,11 @@
     font-size: 20px;
     margin-top: 10px;
 }
+.refresh:hover{
+    cursor: pointer;
+    font-size: 21px;
+}
+
 #weather-info{
     position: relative;
     border: 1px solid white;

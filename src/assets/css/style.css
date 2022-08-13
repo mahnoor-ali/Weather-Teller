@@ -14,10 +14,10 @@
 }
 #location{
     background-color: transparent;
-    border: 1px solid whitesmoke;
+    border: 2px solid whitesmoke;
     border-radius: 10px;
     padding: 5px;
-    width: 35%;
+    width: 40%;
     text-align: center;
     font-size: medium;
 }
@@ -35,9 +35,10 @@
 
 #weather-info{
     position: relative;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 60px;
     background-color: rgba(176, 211, 232, 0.4);
+    box-shadow: white 0px 7px 29px 0px;
     margin: 20px 10px 20px 10px;
     padding-left: 12px;
     display: grid;

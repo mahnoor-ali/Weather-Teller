@@ -52,7 +52,7 @@ export default function Weather() {
     settempLocation(event.target.value);
   }
   useEffect(() => {
-    getWeather()
+    getWeather();
   }, [location])
 
   return (
@@ -77,7 +77,7 @@ export default function Weather() {
       <div id="details">
         <div>Humidity</div>
         <div id="cloud-pct">Cloud</div>
-        <div >Feels</div>
+        <div >Feels Like</div>
         <div id="humidity">{weather.Humidity}%</div>
         <div id="cloud-pct"> {weather.cloudPct}%</div>
         <div id="feels-like"> {weather.feelsLike}°</div>

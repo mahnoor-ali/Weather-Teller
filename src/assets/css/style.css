@@ -67,12 +67,12 @@
 }
 #details{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.9fr 1.1fr;
     grid-template-rows: repeat(2, 1fr);
     background:
     linear-gradient(white, white) center/1px 100% no-repeat,
     linear-gradient(white, white) center/1px 100% no-repeat;
-    background-position:33% 0, 67% 0;
+    background-position:33% 0, 64% 0;
     font-weight: 700 !important;
 }
 

@@ -21,6 +21,11 @@
     text-align: center;
     font-size: medium;
 }
+#location:focus{
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    outline: none;
+}
 .refresh{
     background-color: transparent;
     border: 0px;
